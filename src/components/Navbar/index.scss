@@ -8,4 +8,10 @@
     top: 0;
     width: 100%;
     z-index: 9999;
+
+    &--title{
+        font-size: 2rem;
+        color: #fff;
+        font-family: 'Lobster', cursive;
+    }
 }

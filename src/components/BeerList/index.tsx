@@ -2,21 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { BeerType } from '@/interfaces/BeerType';
 import BeerCard from '../BeerCard';
 import './index.scss';
 import axios from 'axios';
 import mock from '../../mock';
-
-export interface BeerType {
-    id: string;
-    name: string;
-    description: string;
-    image: string;
-    rating: number;
-    type: string;
-    liters: number;
-    price: number;
-}
+import ScrollBeers from '../ScrollBeers';
 
 export default function BeerList() {
     const [beers, setBeers] = useState<BeerType[]>([mock as unknown as BeerType]);
@@ -85,6 +76,7 @@ export default function BeerList() {
                     backgroundColor: backgroundColors[pageIndex % backgroundColors.length],
                     transition: 'background-color 0.5s ease'
                 }}>
+            <ScrollBeers beers={beers} />
             <div className="beer-list--arrow">
                 <button className="beer-list--arrow__left" onClick={handleLeftClick}>
                     <FaChevronLeft />
@@ -94,8 +86,11 @@ export default function BeerList() {
                 </button>
             </div>
             {beers[0].map((beer) => (
-                <BeerCard key={beer.id} id={beer.id} name={beer.name} description={beer.description} image={beer.image} rating={beer.rating} />
+                <BeerCard key={beer.id} id={beer.id} name={beer.name} description={beer.description} image={beer.image} rating={beer.rating} type={beer.type} liters={beer.liters} price={beer.price} />
             ))}
+            <div className="beer-list--page-indicator">
+                {pageIndex + 1} / {beers[0].length}
+            </div>
         </section>
     );
 }

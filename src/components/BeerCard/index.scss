@@ -6,6 +6,7 @@
     padding: 1rem;
     min-width: 100vw;
     position: relative;
+    gap: 1rem;
 
     &--id{
         display: flex;
@@ -36,6 +37,16 @@
         }
         p{
             font-size: 1.2rem;
+        }
+
+        &__info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border: 3px solid #fff;
+            font-size: 20px;
+            border-radius: 16px;
         }
     }
 
@@ -71,6 +82,11 @@
             align-items: center;
             justify-content: center;
             border: 3px solid #fff;
+
+            &--title{
+                position: absolute;
+                left: -90px;
+            }
         }
     }
 }
