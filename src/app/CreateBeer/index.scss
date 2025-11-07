@@ -1,0 +1,144 @@
+.beer-form-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+  gap: 2rem;
+  background-color: #222;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+
+  input {
+    padding: 0.6rem 1rem;
+    border: none;
+    font-size: 1rem;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    background: none;
+
+    &:focus {
+      border-color: #007b6e;
+      box-shadow: 0 0 0 3px rgba(0, 123, 110, 0.2);
+    }
+  }
+
+  &--id {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/tampa.png');
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+  }
+
+  &--texts {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    color: #333;
+
+    h3 {
+      font-size: 1.8rem;
+      text-align: center;
+      color: #222;
+    }
+
+    &__info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0.8rem;
+      border: 2px solid #007b6e;
+      border-radius: 12px;
+      background-color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+
+      input {
+        width: 80px;
+        text-align: center;
+      }
+
+      span {
+        color: #007b6e;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &--image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 320px;
+    position: relative;
+
+    &__image {
+        width: 320px;
+        height: 320px;
+        overflow: hidden;
+        border-radius: 50% 50% 50% 50% / 50% 80% 30% 80%;
+        border: 4px solid #007b6e;
+        background-color: #f7faf9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+    }
+
+    &__ratings {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      position: absolute;
+      bottom: -70px;
+      background: #007b6e;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+      input {
+        width: 50px;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+      }
+
+      &--title {
+        font-weight: 600;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    min-height: auto;
+  }
+}
