@@ -8,3 +8,7 @@ export const getBeers = async () => {
     return response.data;
 }
 
+export const createBeer = async (beer: BeerType) => {
+    const response = await axios.post<BeerType>(BASE_URL, beer);
+    return response.data;
+}
